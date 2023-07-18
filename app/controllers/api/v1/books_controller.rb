@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class BooksController < ApplicationController
+class Api::V1::BooksController < ApplicationController
   def index
-    render json: Book.all.to_json(only: %i[title author published_on])
+    render json: Book.all.to_json(only: %i[id title author published_on])
   end
 
   def checkout
